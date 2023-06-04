@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  web:
+    build:
+      dockerfile: 'flc-web/images/dev.Dockerfile'
+
+  gateway:
+    build:
+      dockerfile: 'flc-gateway/images/dev.Dockerfile'
