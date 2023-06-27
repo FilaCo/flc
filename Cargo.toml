@@ -1,0 +1,9 @@
+[package]
+name = "flc"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+axum = { version = "0.6", features = ["http2", "tracing"] }
+tracing-subscriber = { version = "0.3" }

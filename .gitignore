@@ -1,6 +1,13 @@
+# Cargo
+target/
+
+# Envs
+.env*
+!.env.example
+
 # IDE
-.idea
-.vscode
+.idea/
+.vscode/
 
 # Misc
 .DS_Store

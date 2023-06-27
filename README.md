@@ -1,3 +1,1 @@
 # Personal app project
-
-
