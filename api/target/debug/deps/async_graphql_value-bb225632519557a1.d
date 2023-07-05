@@ -1,0 +1,10 @@
+/home/flc/Projects/flc/flc_gateway/target/debug/deps/async_graphql_value-bb225632519557a1.rmeta: /home/flc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-graphql-value-5.0.10/src/lib.rs /home/flc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-graphql-value-5.0.10/src/deserializer.rs /home/flc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-graphql-value-5.0.10/src/macros.rs /home/flc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-graphql-value-5.0.10/src/serializer.rs /home/flc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-graphql-value-5.0.10/src/value_serde.rs /home/flc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-graphql-value-5.0.10/src/variables.rs
+
+/home/flc/Projects/flc/flc_gateway/target/debug/deps/async_graphql_value-bb225632519557a1.d: /home/flc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-graphql-value-5.0.10/src/lib.rs /home/flc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-graphql-value-5.0.10/src/deserializer.rs /home/flc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-graphql-value-5.0.10/src/macros.rs /home/flc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-graphql-value-5.0.10/src/serializer.rs /home/flc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-graphql-value-5.0.10/src/value_serde.rs /home/flc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-graphql-value-5.0.10/src/variables.rs
+
+/home/flc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-graphql-value-5.0.10/src/lib.rs:
+/home/flc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-graphql-value-5.0.10/src/deserializer.rs:
+/home/flc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-graphql-value-5.0.10/src/macros.rs:
+/home/flc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-graphql-value-5.0.10/src/serializer.rs:
+/home/flc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-graphql-value-5.0.10/src/value_serde.rs:
+/home/flc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-graphql-value-5.0.10/src/variables.rs:

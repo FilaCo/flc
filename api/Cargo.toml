@@ -1,0 +1,12 @@
+[package]
+name = "api"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+async-graphql = { version = "5" }
+async-graphql-axum = { version = "5" }
+axum = { version = "0.6", features = ["http2", "tracing"] }
+tokio = { version = "1", features = ["full"] }
