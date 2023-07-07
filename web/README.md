@@ -1,1 +1,0 @@
-# Web client for personal app
