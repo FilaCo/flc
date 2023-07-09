@@ -1,23 +1,9 @@
 import Color from 'color'
-import type { Theme, ThemeCollection } from '$lib/features/theming/Theme'
+import type { Palette, PaletteCollection } from '$lib/features/theming/utils/palette'
 
-const pikachuLight: Theme = {
-  name: 'Pikachu Light',
-  palette: {
-    primary: Color('#ff0'),
-    secondary: Color('#f00')
-  }
-}
+const presets: PaletteCollection = new Map<string, Palette>([
+  ['Pikachu Dark', { primary: Color('#000'), secondary: Color('#f00') }],
+  ['Pikachu Light', { primary: Color('#ff0'), secondary: Color('#f00') }]
+])
 
-const pikachuDark: Theme = {
-  name: 'Pikachu Dark',
-  palette: {
-    primary: Color('#000'),
-    secondary: Color('#f00')
-  }
-}
-
-export const presets: ThemeCollection = {
-  default: pikachuLight,
-  themes: [pikachuLight, pikachuDark]
-}
+export default presets

@@ -1,46 +1,57 @@
 <script lang="ts">
-  import { onMount, setContext } from 'svelte'
-  import type { Theme, ThemeContext } from '$lib/features/theming/Theme'
-  import type Color from 'color'
-  import { presets } from '$lib/features/theming/presets'
-  import { writable } from 'svelte/store'
-  import { browser } from '$app/environment'
+  import presets from '$lib/features/theming/presets'
+  import {
+    paletteName as paletteNameStore,
+    palettes as palettesStore,
+    palette as paletteStore
+  } from '$lib/features/theming/utils/stores'
+  import { afterUpdate, onMount, setContext } from 'svelte'
+  import type {Palette, PaletteCollection} from '$lib/features/theming/utils/palette'
 
-  export let themeCollection = presets
+  export let palettes: PaletteCollection = presets
+  export let paletteName: string | undefined = undefined
 
-  const initThemeName = browser
-    ? window.localStorage.getItem('theme') ?? presets.default.name
-    : presets.default.name
+  palettesStore.set(palettes)
 
-  const theme = writable(presets.themes.find((t) => t.name === initThemeName) ?? presets.default)
-  theme.subscribe((t) => browser && window.localStorage.setItem('theme', t.name))
+  const [[fallbackPaletteName]] = palettes
 
-  const context: ThemeContext = {
-    currentTheme: theme,
-    availableThemes: themeCollection,
-    setCurrentTheme: (themeName: string) => {
-      const newTheme = themeCollection.themes.find((t) => t.name === themeName)
-      if (!newTheme) return
-
-      theme.set(newTheme)
-      setRootColors($theme)
-    }
+  if (!palettes.has($paletteNameStore)) {
+    paletteNameStore.set(fallbackPaletteName)
   }
 
-  setContext('theme', context)
+  paletteStore.set(palettes[$paletteNameStore])
+
+  const createCssVariables = (palette: Palette) => {
+
+  }
+
+  setContext('theme', {})
 
   onMount(() => {
-    setRootColors($theme)
+    const savedPaletteName = localStorage && localStorage.getItem('palette')
+
+    if (paletteName && palettes[paletteName]) {
+      paletteNameStore.set(paletteName)
+    } else if (savedPaletteName && palettes[savedPaletteName]) {
+      paletteNameStore.set(savedPaletteName)
+    } else {
+      paletteNameStore.set(fallbackPaletteName)
+    }
+
+    localStorage && localStorage.setItem('palette', $paletteNameStore)
   })
 
-  const setRootColors = (theme: Theme) => {
-    for (const [prop, value] of Object.entries(theme.palette)) {
-      const colorStringName = `--theme-${prop}`
-      const color = value as Color
-      document.documentElement.style.setProperty(colorStringName, color.hex())
-    }
-    document.documentElement.style.setProperty('--theme-name', theme.name)
-  }
+  afterUpdate(() => {
+    if (localStorage) localStorage.setItem('palette', $paletteNameStore)
+  })
 </script>
 
-<slot />
+<div class={`theme-provider ${$$props.class ?? ''}`.trim()} bind:style={}>
+  <slot />
+</div>
+
+<style>
+  .theme-provider {
+    display: contents;
+  }
+</style>
