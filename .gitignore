@@ -4,3 +4,8 @@
 
 # Misc
 .DS_Store
+
+# Envs
+.env
+.env.*
+!.env.example
