@@ -1,6 +1,6 @@
 <script lang="ts">
   import { getContext } from 'svelte'
-  import type { ThemeContext } from '$lib/containers/theming/utils/theme'
+  import type { ThemeContext } from '$lib/utils/theming/theme'
 
   const { themeKey, themes, setTheme } = getContext<ThemeContext>('theme')
 

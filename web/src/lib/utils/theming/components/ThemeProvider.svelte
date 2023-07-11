@@ -1,12 +1,12 @@
 <script lang="ts">
-  import presets from '$lib/containers/theming/presets'
+  import presets from '$lib/utils/theming/presets'
   import {
     themeKey as themeKeyStore,
     themes as themesStore,
     theme as themeStore
-  } from '$lib/containers/theming/utils/stores'
-  import type { ThemeCollection, ThemeContext } from '$lib/containers/theming/utils/theme'
-  import createCssVariables from '$lib/containers/theming/utils/createCssVariables'
+  } from '$lib/utils/theming/stores'
+  import type { ThemeCollection, ThemeContext } from '$lib/utils/theming/theme'
+  import createCssVariables from '$lib/utils/theming/createCssVariables'
   import { onMount, setContext } from 'svelte'
 
   export let themes: ThemeCollection = presets

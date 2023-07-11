@@ -1,6 +1,6 @@
 import { type Writable, writable } from 'svelte/store'
-import type { Theme, ThemeCollection } from '$lib/containers/theming/utils/theme'
-import { persistedStorage } from '$lib/utils'
+import type { Theme, ThemeCollection } from '$lib/utils/theming/theme'
+import persistedStorage from '$lib/utils/persistedStorage'
 
 export const themeKey: Writable<string> = persistedStorage<string>('theme')
 export const theme: Writable<Theme> = writable()

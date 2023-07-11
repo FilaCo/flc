@@ -1,5 +1,5 @@
 import Color from 'color'
-import type { Theme, ThemeCollection } from '$lib/containers/theming/utils/theme'
+import type { Theme, ThemeCollection } from '$lib/utils/theming/theme'
 
 const presets: ThemeCollection = new Map<string, Theme>([
   [

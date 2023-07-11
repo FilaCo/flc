@@ -1,7 +1,7 @@
 import { browser } from '$app/environment'
 import { writable } from 'svelte/store'
 
-export const persistedStorage = <T>(key: string, defaultValue?: T) => {
+const persistedStorage = <T>(key: string, defaultValue?: T) => {
   if (!browser) {
     return writable(defaultValue)
   }
@@ -12,3 +12,5 @@ export const persistedStorage = <T>(key: string, defaultValue?: T) => {
 
   return store
 }
+
+export default persistedStorage
